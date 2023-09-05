@@ -21,7 +21,9 @@ class Grupo:
         if lista is None:
             lista = []
         lista.append(alumno)
-        self.listadoAlumnos = lista
+        if not hasattr(self, 'listadoAlumnos'):
+            self.listadoAlumnos = []
+        self.listadoAlumnos.extend(lista)
 
 
     def __str__(self):
